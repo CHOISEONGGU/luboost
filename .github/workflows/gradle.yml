@@ -52,10 +52,10 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
 
     - name: Image push to docker hub
-      run: docker push edichoi/luboost:1.0
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
 
-    - name: Delete the image that pushed on docker hub
-      run: docker rmi -f edichoi/luboost:1.0
+    #- name: Delete the image that pushed on docker hub
+    #  run: docker rmi -f ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
 
     - name: Init container
-      run: docker run -d --name boost edichoi/luboost:1.0
+      run: docker run -d --name boost ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
