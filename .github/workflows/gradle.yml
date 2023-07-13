@@ -57,7 +57,7 @@ jobs:
     #  run: docker rmi -f ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
 
     - name: Build Docker image
-      run: docker build -t luboost:1.0 .
+      run: docker build -t luboost:1.0 -f Dockerfile .
 
     - name: Tag Docker Image
       run: docker tag luboost:1.0 ${{ secrets.DOCKER_RESISTRY }}/luboost:1.0
