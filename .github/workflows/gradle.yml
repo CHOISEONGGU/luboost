@@ -41,3 +41,18 @@ jobs:
 
     - name: build and package with google
       run: cp build/libs/*.jar app.jar
+
+    - name: Docker image build
+      run: docker build -t luboost:1.0 -f Dockerfile .
+
+    - name: docker hub login
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_ID }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Image push to docker hub
+      run: docker push luboost:1.0
+
+    - name: Init container
+      run: docker run -p 8080:8080 luboost:1.0
