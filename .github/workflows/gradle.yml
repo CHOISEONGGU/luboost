@@ -50,7 +50,8 @@ jobs:
 
     - name: Image build and push to docker hub
       run: |
-        docker build -t luboost:1.0 -f Dockerfile .
+        docker rmi luboost:1.0
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/luboost:1.0 -f Dockerfile .
         docker push ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
 
     #- name: Delete the image that pushed on docker hub
