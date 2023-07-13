@@ -8,4 +8,4 @@ WORKDIR /app
 ADD app.jar /app/app.jar
 
 # Entrypoint
-ENTRYPOINT ["java", "-jar", "/app/app/jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
