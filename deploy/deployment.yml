@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pod-luboost
-          image: ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
+          image: edichoi/luboost:1.0
           ports:
             - containerPort: 80
 ---
