@@ -36,5 +36,8 @@ jobs:
     - name: Grant execute permission to Gradlew
       run: chmod +x gradlew
 
+    - name: Build and Package with Gradle
+      run: ./gradlew bootJar
+
     - name: build and package with google
       run: cp build/libs/*.jar app.jar
