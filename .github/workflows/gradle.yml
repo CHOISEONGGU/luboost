@@ -56,10 +56,6 @@ jobs:
     #- name: Delete the image that pushed on docker hub
     #  run: docker rmi -f ${{ secrets.DOCKER_USERNAME }}/luboost:1.0
 
-    - name: Login to Docker Registry
-      run: |
-        docker login 211.183.3.100:5000 -u 211.183.3.100:5000 -p ${{ secrets.DOCKER_PRIVATE_PASSWORD }}
-
     - name: Build Docker image
       run: docker build -t 211.183.3.100:5000/luboost:1.0 -f Dockerfile .
 
