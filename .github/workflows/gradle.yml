@@ -66,7 +66,7 @@ jobs:
       run: docker push ${{ secrets.DOCKER_RESISTRY }}/luboost:1.0
 
     - name: Remove Docker image
-      run: docker image rmi ${{ secrets.DOCKER_RESISTRY }}/luboost:1.0
+      run: docker rmi ${{ secrets.DOCKER_RESISTRY }}/luboost:1.0
 
     - name: Init container
       run: |
